@@ -46,4 +46,15 @@ public class PersonDaoImp implements PersonDao{
 		entityManager.remove(person);
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean verifyPerson(Person person) {
+		String query = "FROM Person WHERE person_email_address = :email AND person_phone_number = :phone";
+		List<Person> list = entityManager.createQuery(query).setParameter("email", person.getEmailAddress())
+			.setParameter("phone", person.getPhoneNumber())
+		.getResultList();
+
+		return !list.isEmpty();
+	}
+
 }

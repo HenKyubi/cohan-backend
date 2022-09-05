@@ -11,5 +11,6 @@ public interface PersonDao {
 	Person getPerson(int id);
 	void updatePerson(int id, Person person);
 	void deletePerson(int id);
+	boolean verifyPerson(Person person);
 	
 }
