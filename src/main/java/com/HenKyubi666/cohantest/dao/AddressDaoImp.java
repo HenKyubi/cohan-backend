@@ -15,7 +15,7 @@ public class AddressDaoImp implements AddressDao{
 	@PersistenceContext
 	EntityManager entityManager;
 
-	// @SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Address> getAddresses() {
 		String query = "FROM Address";
