@@ -1,15 +1,15 @@
 package com.HenKyubi666.cohantest.dao;
 
-import com.HenKyubi666.cohantest.models.Address;
+import com.HenKyubi666.cohantest.models.Person;
 
 import java.util.List;
 
-public interface AddressDao {
+public interface PersonDao {
 	
-	void createAddress(Address address);
-	List<Address> getAddresses();
-	Address getAddress(int id);
-	Address updateAddress(Address address);
-	void deleteAddress(int id);
+	void createPerson(Person person);
+	List<Person> getPersons();
+	Person getPerson(int id);
+	void updatePerson(int id, Person person);
+	void deletePerson(int id);
 	
 }

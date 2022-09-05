@@ -1,7 +1,7 @@
 package com.HenKyubi666.cohantest.controllers;
 
-import com.HenKyubi666.cohantest.dao.AddressDao;
-import com.HenKyubi666.cohantest.models.Address;
+import com.HenKyubi666.cohantest.dao.PersonDao;
+import com.HenKyubi666.cohantest.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,34 +9,34 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-public class AddressController {
+public class PersonController {
 
     @Autowired
-    private AddressDao addressDao;
+    private PersonDao personDao;
 
-    @RequestMapping(value = "api/address", method = RequestMethod.POST)
-    public void createAddress(@RequestBody Address address){
-        addressDao.createAddress(address);
+    @RequestMapping(value = "api/person", method = RequestMethod.POST)
+    public void createPerson(@RequestBody Person person){
+        personDao.createPerson(person);
     }
 
-    @RequestMapping(value = "api/address", method = RequestMethod.GET)
-    public List<Address> getAddresses(){
-        return addressDao.getAddresses();
+    @RequestMapping(value = "api/person", method = RequestMethod.GET)
+    public List<Person> getPersons(){
+        return personDao.getPersons();
     }
 
-    @RequestMapping(value = "api/address/{id}" , method = RequestMethod.GET)
-    public Address getAddress(@PathVariable int id){
-        return addressDao.getAddress(id);
+    @RequestMapping(value = "api/person/{id}" , method = RequestMethod.GET)
+    public Person getPerson(@PathVariable int id){
+        return personDao.getPerson(id);
     }
 
-    @RequestMapping(value = "api/address", method = RequestMethod.PATCH)
-    public void updateAddress(@RequestBody Address address){
-        addressDao.updateAddress(address);
+    @RequestMapping(value = "api/person", method = RequestMethod.PATCH)
+    public void updatePerson(@RequestBody int id, Person person){
+        personDao.updatePerson(id, person);
     }
 
-    @RequestMapping(value = "api/address/{id}" , method = RequestMethod.DELETE)
-    public void deleteAddress(@PathVariable int id){
-        addressDao.deleteAddress(id);
+    @RequestMapping(value = "api/person/{id}" , method = RequestMethod.DELETE)
+    public void deletePerson(@PathVariable int id){
+        personDao.deletePerson(id);
     }
 
 

@@ -1,37 +1,36 @@
 package com.HenKyubi666.cohantest.models;
 
-import javax.persistence.*;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.*;
+
 @Entity
-@Table(name = "addresses")
+@Table(name = "persons")
 @ToString @EqualsAndHashCode
-public class Address {
+public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Getter @Setter @Column(name="address_id")
+	@Getter @Setter @Column(name="person_id")
 	private int id;
 
-	@Getter @Setter @Column(name="address_street")
-	private int street;
+	@Getter @Setter @Column(name="person_name")
+	private String name;
 
-	@Getter @Setter @Column(name="address_city")
-	private String city;
+	@Getter @Setter @Column(name="person_phone_number")
+	private String phoneNumber;
 
-	@Getter @Setter @Column(name="address_state")
-	private String state;
+	@Getter @Setter @Column(name="person_email_address")
+	private String emailAddress;
 
-	@Getter @Setter @Column(name="address_postal_code")
-	private int postalCode;
+	@ManyToOne
+	@Getter @Setter
+	@JoinColumn(name = "address_id")
+	private Address addressId;
 
-	@Getter @Setter @Column(name="address_country")
-	private String country;
-
-	public Address() {
+	public Person() {
 	}
 	
 }
