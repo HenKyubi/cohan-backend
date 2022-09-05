@@ -28,8 +28,8 @@ public class AddressDaoImp implements AddressDao{
 	}
 
 	@Override
-	public void createAddress(Address address) {
-		entityManager.merge(address);
+	public Address createAddress(Address address) {
+		return entityManager.merge(address);
 	}
 
 	@Override

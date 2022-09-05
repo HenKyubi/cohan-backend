@@ -15,8 +15,8 @@ public class AddressController {
     private AddressDao addressDao;
 
     @RequestMapping(value = "api/address", method = RequestMethod.POST)
-    public void createAddress(@RequestBody Address address){
-        addressDao.createAddress(address);
+    public Address createAddress(@RequestBody Address address){
+        return addressDao.createAddress(address);
     }
 
     @RequestMapping(value = "api/address", method = RequestMethod.GET)

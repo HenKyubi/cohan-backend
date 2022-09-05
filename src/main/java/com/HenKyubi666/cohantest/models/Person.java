@@ -25,9 +25,9 @@ public class Person {
 	@Getter @Setter @Column(name="person_email_address")
 	private String emailAddress;
 
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.ALL})
 	@Getter @Setter
-	@JoinColumn(name = "address_id")
+	@JoinColumn(name = "person_address_id") 
 	private Address addressId;
 
 	public Person() {
